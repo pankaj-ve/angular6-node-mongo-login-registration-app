@@ -1,0 +1,65 @@
+
+<!-- form section start -->
+
+<div class="container register">
+
+    <app-header></app-header>
+    
+    <div class="container">
+        
+        <div class="row">
+            
+            <app-common-nav></app-common-nav>
+        
+            <div class="col-md-9 col-lg-9">
+            
+                <div class="row" style="min-height:450px;">
+                
+                    <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6">
+                        <h2>Login</h2>
+                        <form name="login_form" (ngSubmit)="fs.form.valid && login(fs);" #fs="ngForm" novalidate>
+                                <div class="form-group" [ngClass]="{ 'has-error': fs.submitted && !email.valid }">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" name="name" id="email"  placeholder="Email" name="email" [(ngModel)]="user.email" minlength="6" #email="ngModel" required />
+                                    <div *ngIf="fs.submitted && !email.valid" class="help-block">Email is required..</div>
+                                </div>
+                              
+                                <div class="form-group" [ngClass]="{ 'has-error': fs.submitted && !password.valid }">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" name="password" id="password"  placeholder="Password" [(ngModel)]="user.password" #password="ngModel"  required/> 
+                                    <div *ngIf="fs.submitted && !password.valid" class="help-block">Password is required and must be atleast six characters long.</div>
+                                </div>
+
+                            <div class="form-group">
+                                    <span style="text-align: center;color: #a94442">{{errorMsg}}</span>
+                                    <span style="text-align: center;color: #28a745">{{sucsMsg}}</span>
+                                  <button type="submit" class="btn btn-primary signin">Login <span class="arrowbtn"><span class="fa fa-arrow-right"></span></span></button>
+                                  <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+                                  <a [routerLink]="['/forgot-password']" class="btn btn-link">Forgot Password?</a>
+                                </div>
+                        </form> 
+                    </div>
+                    
+                </div>
+              </div>
+        
+          </div>
+      </div>
+  </div>
+    
+    
+    
+    <div class="container-fluid">
+        
+    <div class="row">
+        
+    <app-footer></app-footer>
+    
+    
+    </div>
+    
+    </div>
+    
+    
+    
+

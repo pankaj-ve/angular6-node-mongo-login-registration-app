@@ -1,0 +1,79 @@
+
+
+<!-- form section start -->
+
+<div class="container register">
+
+        <app-header></app-header>
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <app-common-nav></app-common-nav>
+            
+                <div class="col-md-9 col-lg-9">
+                
+                    <div class="row" style="min-height:450px;">
+                    
+                        <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6">
+                                <div class="card">
+                                        <div class="card-block">
+                                                <div class="navbar-collapse">
+                                                    <span style="float:right;"><a [routerLink]="['/login']">Logout</a></span>
+                                                    <h4>Hi {{userFirstName}}</h4>
+                                                </div>
+                                                <p>You are logged in successfully!</p>
+                                            
+                                                    
+                                                <div class="table-responsive">
+                                                    <table class="table-bordered table-striped">
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Username</td>
+                                                            <td>Phone</td>
+                                                            <td>website</td>
+                                                        </tr>
+                                                        <tr *ngFor="let user of users">
+                                                            <td>{{user.name}}</td>
+                                                            <td>{{user.username}}</td>
+                                                            <td>{{user.phone}}</td>
+                                                            <td>{{user.website}}</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        
+                    </div>
+                  </div>
+            
+              </div>
+          </div>
+      </div>
+        
+        
+        
+        <div class="container-fluid">
+            
+        <div class="row">
+            
+        <app-footer></app-footer>
+        
+        
+        </div>
+        
+        </div>
+        
+        
+        
+    
+    
+
+
+
+
+
+
+
