@@ -35,7 +35,7 @@ export class AuthService {
     let data ={ email: email, password: password.password,token:token};
     let bodyString = JSON.stringify(data);
     let headers = new HttpHeaders().set('Content-Type','application/json ');
-    return this.http.post<any[]>(environment.apiUrl+"/user/login",bodyString,{headers});
+    return this.http.put<any[]>(environment.apiUrl+"/user/reset-password",bodyString,{headers});
     
   }
   
